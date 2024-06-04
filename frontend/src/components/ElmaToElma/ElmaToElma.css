@@ -16,13 +16,12 @@ h2 {
 
 .block {
   flex: 1 1 45%;
-  background-color: rgba(26, 31, 55, 0.8); /* Добавлена прозрачность 80% */
+  background-color: rgba(26, 31, 55, 0.8);
   padding: 20px;
   border-radius: 8px;
   box-sizing: border-box;
   margin-bottom: 20px;
-  backdrop-filter: blur(10px); /* Добавлен блюр */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .block h3 {
@@ -64,4 +63,10 @@ button {
 button:disabled {
   background-color: #6c757d;
   cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
 }

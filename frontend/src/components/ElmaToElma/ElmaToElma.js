@@ -3,8 +3,6 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import './ElmaToElma.css';
 
-// test coment
-
 function ElmaToElma() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -19,24 +17,29 @@ function ElmaToElma() {
   const [code, setCode] = useState('');
 
   useEffect(() => {
-    setSourceUrl(Cookies.get('sourceUrl') || '');
-    setDestinationUrl(Cookies.get('destinationUrl') || '');
-    setSourceToken(Cookies.get('sourceToken') || '');
-    setDestinationToken(Cookies.get('destinationToken') || '');
-    setNamespace(Cookies.get('namespace') || '');
-    setCode(Cookies.get('code') || '');
+    const savedSourceUrl = Cookies.get('sourceUrl') || '';
+    const savedDestinationUrl = Cookies.get('destinationUrl') || '';
+    const savedSourceToken = Cookies.get('sourceToken') || '';
+    const savedDestinationToken = Cookies.get('destinationToken') || '';
+    const savedNamespace = Cookies.get('namespace') || '';
+    const savedCode = Cookies.get('code') || '';
+
+    setSourceUrl(savedSourceUrl);
+    setDestinationUrl(savedDestinationUrl);
+    setSourceToken(savedSourceToken);
+    setDestinationToken(savedDestinationToken);
+    setNamespace(savedNamespace);
+    setCode(savedCode);
   }, []);
 
   const handleSourceUrlChange = (e) => {
     const url = e.target.value;
-    setSourceUrl(url);
-    analyzeAndSetUrl(url, setNamespace, setCode, setSourceUrl, 'sourceUrl');
+    extractNamespaceAndCode(url, setNamespace, setCode, setSourceUrl);
   };
 
   const handleDestinationUrlChange = (e) => {
     const url = e.target.value;
-    setDestinationUrl(url);
-    analyzeAndSetUrl(url, setNamespace, setCode, setDestinationUrl, 'destinationUrl');
+    extractNamespaceAndCode(url, setNamespace, setCode, setDestinationUrl);
   };
 
   const handleSourceTokenChange = (e) => {
@@ -52,9 +55,9 @@ function ElmaToElma() {
   };
 
   const handleNamespaceChange = (e) => {
-    const ns = e.target.value;
-    setNamespace(ns);
-    Cookies.set('namespace', ns);
+    const namespace = e.target.value;
+    setNamespace(namespace);
+    Cookies.set('namespace', namespace);
   };
 
   const handleCodeChange = (e) => {
@@ -92,7 +95,7 @@ function ElmaToElma() {
     }
   };
 
-  const analyzeAndSetUrl = (url, setNamespace, setCode, setUrl, cookieName) => {
+  const extractNamespaceAndCode = (url, setNamespace, setCode, setUrl) => {
     const urlParts = url.split('/');
     if (urlParts.length > 3) {
       const domain = `${urlParts[0]}//${urlParts[2]}`;
@@ -103,8 +106,10 @@ function ElmaToElma() {
       setUrl(domain);
       Cookies.set('namespace', namespace);
       Cookies.set('code', code);
-      Cookies.set(cookieName, domain);
+    } else {
+      setUrl(url);
     }
+    Cookies.set(urlParts[2].includes('source') ? 'sourceUrl' : 'destinationUrl', url);
   };
 
   return (
