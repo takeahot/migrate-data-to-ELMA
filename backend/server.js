@@ -65,16 +65,16 @@ app.post('/api/transfer-data', async (req, res) => {
         console.log('Starting transfer data process...');
 
         const data = await getDataFromELMA(sourceUrl, sourceToken, namespace, code, steps);
-        steps.push(`Data retrieved at ${new Date().toISOString()}: ${JSON.stringify(data)}`);
+        steps.push(`Data retrieved at ${new Date().toISOString()}: ${JSON.stringify(data, null, 2)}`); // форматированный JSON
         console.log('Data retrieved:', data);
 
         await transferDataFromELMA(data.items, sourceToken, destinationUrl, destinationToken, namespace, code, steps);
 
-        res.status(200).json({ message: 'Data transferred successfully', steps });
+        res.status(200).json({ message: 'Data transferred successfully', steps: formatSteps(steps) });
     } catch (error) {
         steps.push(`Error at ${new Date().toISOString()}: ${error.message}`);
         console.error('Error during data transfer:', error);
-        res.status(500).json({ error: error.message, steps });
+        res.status(500).json({ error: error.message, steps: formatSteps(steps) });
     }
 });
 
@@ -85,3 +85,17 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+
+function formatSteps(steps) {
+    return steps.map(step => {
+        if (typeof step === 'string' && step.startsWith('{') && step.endsWith('}')) {
+            try {
+                const json = JSON.parse(step);
+                return JSON.stringify(json, null, 2);
+            } catch (e) {
+                return step;
+            }
+        }
+        return step;
+    });
+}
