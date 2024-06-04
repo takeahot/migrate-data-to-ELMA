@@ -143,6 +143,38 @@ async function updateElements(items, destinationToken, namespace, code, steps) {
     }
 }
 
+// Функция для задержки
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Функция для отправки запроса с задержкой
+async function makeRequestWithDelay(url, body, token, delayMs) {
+    await delay(delayMs);
+
+    const requestStartTime = new Date().toISOString();
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+    });
+
+    const responseTime = new Date().toISOString();
+    
+    if (!response.ok) {
+        throw new Error(`Failed to send data: ${response.statusText} at ${responseTime}`);
+    }
+
+    const responseData = await response.json();
+    responseData.requestStartTime = requestStartTime;
+    responseData.responseTime = responseTime;
+    
+    return responseData;
+}
+
 // Экспорт функций
 module.exports = {
     getDataFromELMA,
