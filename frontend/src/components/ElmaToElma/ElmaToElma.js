@@ -112,6 +112,13 @@ function ElmaToElma() {
     Cookies.set(urlParts[2].includes('source') ? 'sourceUrl' : 'destinationUrl', url);
   };
 
+  const renderData = (data) => {
+    if (typeof data === 'object') {
+      return <pre className="json-data">{JSON.stringify(data, null, 2)}</pre>;
+    }
+    return data;
+  };
+
   return (
     <div className="elma-to-elma">
       <h2>Transfer Data from ELMA to ELMA</h2>
@@ -159,7 +166,7 @@ function ElmaToElma() {
           <li key={index}>{step}</li>
         ))}
       </ul>
-      {data && <div>Data transferred successfully!</div>}
+      {data && <div>{renderData(data)}</div>}
     </div>
   );
 }

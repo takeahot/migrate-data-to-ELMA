@@ -70,3 +70,14 @@ button:disabled {
   text-align: center;
   margin-top: 20px;
 }
+
+.json-data {
+  background-color: #282c34;
+  color: #abb2bf;
+  padding: 20px;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+}
