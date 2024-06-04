@@ -1,0 +1,195 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: transparent;
+    padding-top: 10px;
+  }
+  
+  ul.MuiList-root.MuiList-padding.css-b42ugf {
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    --fc-daygrid-event-dot-width: 8px;
+    --google-font-color-materialiconstwotone: none;
+    font-family: "Plus Jakarta Display", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.625;
+    white-space: nowrap;
+    color: rgb(52, 71, 103);
+    box-sizing: inherit;
+    list-style: none;
+    margin: 0px 0px auto;
+    padding: 0px;
+    position: relative;
+  }
+  
+  li.MuiListItem-root.MuiListItem-padding.css-1cwehnr {
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    --fc-daygrid-event-dot-width: 8px;
+    --google-font-color-materialiconstwotone: none;
+    font-family: "Plus Jakarta Display", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.625;
+    white-space: nowrap;
+    color: rgb(52, 71, 103);
+    list-style: none;
+    margin: 10px 0;
+    padding: 0px;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  
+  div.MuiBox-root.css-19dngxh {
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    --fc-daygrid-event-dot-width: 8px;
+    --google-font-color-materialiconstwotone: none;
+    font-family: "Plus Jakarta Display", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.625;
+    list-style: none;
+    text-align: left;
+    box-sizing: inherit;
+    opacity: 1;
+    background: rgb(26, 31, 55);
+    color: rgb(255, 255, 255);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.675rem 0.8rem 0.675rem 1rem;
+    margin: 0px 1rem;
+    border-radius: 0.9375rem;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    box-shadow: none;
+    transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  
+  div.MuiListItemIcon-root.css-1tyhgf4 {
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    --fc-daygrid-event-dot-width: 8px;
+    --google-font-color-materialiconstwotone: none;
+    font-family: "Plus Jakarta Display", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.625;
+    list-style: none;
+    text-align: left;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+    color: rgba(0, 0, 0, 0.54);
+    flex-shrink: 0;
+    min-width: 2rem;
+    min-height: 2rem;
+    border-radius: 0.75rem;
+    display: grid;
+    place-items: center;
+    box-shadow: rgba(20, 20, 20, 0.12) 0rem 0.25rem 0.375rem -0.0625rem, rgba(20, 20, 20, 0.07) 0rem 0.125rem 0.25rem -0.0625rem;
+    transition: margin 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background: rgb(0, 117, 255);
+  }
+  
+  div.MuiListItemText-root.css-11mrcoa {
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    --fc-daygrid-event-dot-width: 8px;
+    --google-font-color-materialiconstwotone: none;
+    font-family: "Plus Jakarta Display", Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.625;
+    list-style: none;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+    flex: 1 1 auto;
+    min-width: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    opacity: 1;
+    max-width: 100%;
+    margin-left: 0.8rem;
+    transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, margin 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  
+  span.MuiTypography-root.MuiTypography-body1.MuiListItemText-primary.css-va0z32 {
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    --fc-daygrid-event-dot-width: 8px;
+    --google-font-color-materialiconstwotone: none;
+    list-style: none;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    box-sizing: inherit;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Plus Jakarta Display", Helvetica, Arial, sans-serif;
+    display: block;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 0;
+  }
+  
+  span.material-icons-round.notranslate.MuiIcon-root.MuiIcon-fontSizeInherit.css-u6kooy {
+    text-size-adjust: 100%;
+    --fc-daygrid-event-dot-width: 8px;
+    --google-font-color-materialiconstwotone: none;
+    list-style: none;
+    cursor: pointer;
+    box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Material Icons Round';
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-align: center;
+    flex-shrink: 0;
+    font-weight: 400;
+    margin-bottom: -0.0625rem;
+    transform: rotate(-180deg);
+    color: rgb(255, 255, 255);
+    transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1rem !important;
+    display: block !important;
+  }
+  
